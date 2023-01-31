@@ -6,27 +6,25 @@ import validatedList from "./http-validation.js";
 const path = process.argv;
 
 function printList(validation, result, identifier = "") {
-
-  if (validation){
+  if (validation) {
     console.log(
       chalk.yellow("Validated list"),
       chalk.black.bgGreen(identifier),
-      validatedList(result));
-  }else{
-
+      validatedList(result)
+    );
+  } else {
     console.log(
       chalk.yellow("List Links"),
       chalk.black.bgGreen(identifier),
-      result);
+      result
+    );
   }
-
 }
 
 async function processText(arg) {
   const path = arg[2];
-  const validation = arg[3] ==='--validation';
+  const validation = arg[3] === "--validation";
 
-  
   try {
     fs.lstatSync(path);
   } catch (err) {
