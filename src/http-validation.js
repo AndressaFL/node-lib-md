@@ -22,9 +22,9 @@ async function checkStatus(listURLs) {
 
 function Error(err) {
   if (err === "ENOTFOUND") {
-    return "link não encontrado";
+    return "Link not found";
   } else {
-    return "ocorreu algum erro";
+    return "Some issue happening with the link.";
   }
 }
 
